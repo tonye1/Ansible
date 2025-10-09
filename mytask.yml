@@ -6,7 +6,7 @@
   tasks:
     - name: Execute python script_output
       ibm.ibm_zos_core.zos_script:
-        cmd: /u/testflr/hel.py
+        cmd: /u/ibmuser/hel.py
         remote_src: true
         chdir: /u/testflr
         executable: /usr/lpp/IBM/cyp/v3r11/pyz/bin/python3
