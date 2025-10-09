@@ -1,6 +1,6 @@
 ---
 - name: Example TSO command execution.
-  hosts: zos_hosts
+  hosts: zos_host
   environment: "{{ environment_vars }}"
   gather_facts: false
   tasks:
