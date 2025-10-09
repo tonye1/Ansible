@@ -1,7 +1,13 @@
 ---
-- name: My Task
-  hosts: zos_host
-  connection: local
+- name: Example TSO command execution.
+  hosts: zos_hosts
+  environment: "{{ environment_vars }}"
+  gather_facts: false
   tasks:
-     - name: Leaving a mark
-       command: "touch /tmp/ansible_was_here"
+    - name: Execute python script_output
+      ibm.ibm_zos_core.zos_script:
+        cmd: /u/testflr/hel.py
+        remote_src: true
+        chdir: /u/testflr
+        executable: /usr/lpp/IBM/cyp/v3r11/pyz/bin/python3
+
