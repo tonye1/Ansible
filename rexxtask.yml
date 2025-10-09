@@ -8,9 +8,7 @@
     ibm.ibm_zos_core.zos_tso_command:
       commands: 
       - EXEC 'tony.work.pds(hellorex)'
-      register: ds_contents
-      changed_when: False
-
-    - name: Print output.
-      debug:
-        msg: "{{ ds_contents.stdout_lines }}"
+    register: response
+  - name: Print output.
+    debug:
+      msg: "{{ response.stdout_lines }}"
