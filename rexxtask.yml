@@ -11,4 +11,4 @@
     register: response
   - name: Print output.
     debug:
-      msg: "{{ response.stdout_lines }}"
+      msg: "{{ response }}"
