@@ -6,4 +6,4 @@
   tasks:
   - name: Run a local REXX script on the managed z/OS node.
     zos_script:
-       cmd: ./scripts/HELLO
+       cmd: 'tony.work.pds(hellorex)'
