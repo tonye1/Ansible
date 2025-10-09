@@ -1,9 +1,9 @@
 ---
 - name: Run a local REXX script 
-  hosts: zos_hosts
+  hosts: zos_host
   environment: "{{ environment_vars }}"
   gather_facts: false
   tasks:
   - name: Run a local REXX script on the managed z/OS node.
-    zos_script:
+    ibm.ibm_zos_core.zos_script:
        cmd: 'tony.work.pds(hellorex)'
