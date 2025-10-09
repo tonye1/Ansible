@@ -6,4 +6,5 @@
   tasks:
   - name: Run a local REXX script on the managed z/OS node.
     ibm.ibm_zos_core.zos_tso_cmd:
-       - EXEC 'tony.work.pds(hellorex)' exec
+      commands: 
+      - EXEC 'tony.work.pds(hellorex)'
