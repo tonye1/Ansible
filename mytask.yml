@@ -1,12 +1,7 @@
-- name: Test command.
+---
+- name: My Task
   hosts: zos_host
-  gather_facts: false
-  environment: "{{ environment_vars }}"
+  connection: local
   tasks:
-    - name: Print FQDN
-      command: hostname
-      register: command
-
-    - name: Print command results.
-      debug:
-        var: command.stdout
+     - name: Leaving a mark
+       command: "touch /tmp/ansible_was_here"
