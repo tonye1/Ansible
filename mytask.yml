@@ -11,7 +11,7 @@
         chdir: /u/ibmuser
         executable: /usr/lpp/IBM/cyp/v3r11/pyz/bin/python3
       register: response
-  - name: Print output.
-    debug:
-      msg: "{{ response }}"
+    - name: Print output.
+      debug:
+        msg: "{{ response }}"
 
