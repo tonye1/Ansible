@@ -1,6 +1,6 @@
 ---
-ansible_host: 169.61.19.202
-ansible_user: tonye1
+ansible_host: host-ip2
+ansible_user: changeme
 #ansible_become_password: "{{ vault_ansible_become_password }}"
 verify: false
 

@@ -1,15 +1,6 @@
 ################################################################################
 # © Copyright IBM Corporation 2020, 2021
 ################################################################################
-
-################################################################################
-# Description of the properties used in this configuration:
-# - Property `ansible_host` is the z/OS managed node (target),
-#    e.g, ansible_host: "zvm1.vmec.svl.ibm.com"
-# - Property `ansible_user` is the z/OS managed user to connect and run as over SSH,
-#    e.g, ansible_user: "zosadm"
-################################################################################
-
 #source_system:
 #  hosts:
 #    zos_host:
@@ -18,16 +9,18 @@
 #    linux_host:
 #      ansible_host: 169.61.19.202
 #ansible_user: tonye1
----
-all:
+ungrouped:
   hosts:
-    tonydev.cloud.ibm.com:
     169.61.19.202:
-  children:
-    hmc_servers:
-      hosts:
-        tonydev.cloud.ibm.com:
-    zos_hosts:
-      hosts:
-        ansible_host: zos_target_address
-        ansible_user: zos_target_username
+webservers:
+  hosts:
+    foo.example.com:
+    bar.example.com:
+dbservers:
+  hosts:
+    one.example.com:
+    two.example.com:
+zos_host:
+   hosts:
+    ansible_host: zos_target_address
+    ansible_user: zos_target_username

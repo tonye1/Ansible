@@ -2,5 +2,5 @@
 ansible_host: 169.61.19.202
 ansible_user: tonye1
 #ansible_become_password: "{{ vault_ansible_become_password }}"
-verify: false
+ansible_port: 1771
 
