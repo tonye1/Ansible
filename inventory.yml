@@ -10,8 +10,24 @@
 #    e.g, ansible_user: "zosadm"
 ################################################################################
 
-source_system:
+#source_system:
+#  hosts:
+#    zos_host:
+#      ansible_host: zos_target_address
+#      ansible_user: zos_target_username
+#    linux_host:
+#      ansible_host: 169.61.19.202
+#ansible_user: tonye1
+---
+all:
   hosts:
-    zos_host:
-      ansible_host: zos_target_address
-      ansible_user: zos_target_username
+    tonydev.cloud.ibm.com:
+    169.61.19.202:
+  children:
+    hmc_servers:
+      hosts:
+        tonydev.cloud.ibm.com:
+    zos_hosts:
+      hosts:
+        ansible_host: zos_target_address
+        ansible_user: zos_target_username
