@@ -1,10 +1,11 @@
 ---
-ansible_host: host-ip2
-ansible_user: changeme
+#ansible_become_password: "{{ vault_ansible_become_password }}"
+ansible_host: 169.62.22.169
+ansible_user: IBMUSER
 #ansible_become_password: "{{ vault_ansible_become_password }}"
 verify: false
 # The path to the root of IBM python installation
-PYZ: "/usr/lpp/IBM/cyp/v3r10/pyz"
+PYZ: "/usr/lpp/IBM/cyp/v3r11/pyz"
 
 # The path to root of ZOAU installation
 ZOAU: "/usr/lpp/IBM/zoautil"

@@ -1,26 +1,30 @@
 ################################################################################
 # © Copyright IBM Corporation 2020, 2021
 ################################################################################
-#source_system:
-#  hosts:
-#    zos_host:
-#      ansible_host: zos_target_address
-#      ansible_user: zos_target_username
-#    linux_host:
-#      ansible_host: 169.61.19.202
-#ansible_user: tonye1
-ungrouped:
+all:
   hosts:
+    server1.example.com:
     169.61.19.202:
-webservers:
-  hosts:
-    foo.example.com:
-    bar.example.com:
-dbservers:
-  hosts:
-    one.example.com:
-    two.example.com:
-zos_host:
-   hosts:
-    ansible_host: zos_target_address
-    ansible_user: zos_target_username
+      ansible_host: 169.61.19.202 
+      ansible_user: tonye1
+    zos_host:
+      ansible_host: 169.62.22.169
+      ansible_user: IBMUSER
+      ansible_ssh_private_key_file: /Users/tonyefremenko/Documents/sandbox/ansible/Zos/ssh_private_key.pem
+  children:
+    webservers:
+      hosts:
+        web1.example.com:
+        web2.example.com:
+    dbservers:
+      hosts:
+        db1.example.com:
+        db2.example.com:
+    production:
+      vars:
+        ansible_user: produser
+        ansible_ssh_private_key_file: /home/ansible/.ssh/id_rsa_prod
+      children:
+        webservers:
+        dbservers:
+

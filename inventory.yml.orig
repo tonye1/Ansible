@@ -1,0 +1,18 @@
+################################################################################
+# © Copyright IBM Corporation 2020, 2021
+################################################################################
+[ungrouped]
+  hosts:
+    169.61.19.202
+[webservers]
+  [hosts]
+    foo.example.com
+    bar.example.com
+[dbservers]
+  [hosts]
+    one.example.com
+    two.example.com
+[zos_host]
+   [hosts]
+    ansible_host=zos_target_address
+    ansible_user=zos_target_username

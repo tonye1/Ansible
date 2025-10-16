@@ -1,0 +1,1 @@
+sudo c3270 -noverifycert -cafile /root/certificates/certificate.pem -port 992 L:10.241.128.5

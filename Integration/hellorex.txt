@@ -1,0 +1,3 @@
+/* Sample REXX Program */
+/* https://www.ibm.com/docs/en/cics-ts/5.5.0?topic=applications-writing-running-rexx-application*/
+SAY 'Hello world!'
