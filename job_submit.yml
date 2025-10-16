@@ -1,0 +1,19 @@
+---
+- name: Demonstrates submitting JCL.
+  hosts: zos_host
+  gather_facts: false
+  vars:
+    tgt_tmp_dir: "/tmp"
+    job_name: "{{ jcl | default('HELLO') }}"
+  environment: "{{ environment_vars }}"
+  tasks:
+    - name: "Submit job {{ job_name }}."
+      ibm.ibm_zos_core.zos_job_submit:
+        src: "{{ playbook_dir }}/files/{{ job_name }}.jcl"
+        location: LOCAL
+        wait_time_s: 60
+        encoding:
+          from: ISO8859-1
+          to: IBM-037
+      register: job_submit
+      ignore_errors: true

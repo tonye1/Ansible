@@ -5,7 +5,7 @@ ansible_user: IBMUSER
 #ansible_become_password: "{{ vault_ansible_become_password }}"
 verify: false
 # The path to the root of IBM python installation
-PYZ: "/usr/lpp/IBM/cyp/v3r11/pyz"
+PYZ: "/usr/lpp/IBM/cyp/v3r9/pyz"
 
 # The path to root of ZOAU installation
 ZOAU: "/usr/lpp/IBM/zoautil"
